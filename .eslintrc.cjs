@@ -41,6 +41,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-void': 'off',
     'react-compiler/react-compiler': 'error',
+    'react/prefer-stateless-function': 'off',
   },
   settings: {
     'import/resolver': { typescript: true },
