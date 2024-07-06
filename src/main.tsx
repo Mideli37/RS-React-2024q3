@@ -12,7 +12,13 @@ if (!root) {
 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
-    <ErrorBoundary fallback={<h1>Error</h1>}>
+    <ErrorBoundary
+      fallback={
+        <div className="h-dvh flex justify-center items-center">
+          <h1>Oops! Something went wrong. Try to reload page</h1>
+        </div>
+      }
+    >
       <App />
     </ErrorBoundary>
   </React.StrictMode>
