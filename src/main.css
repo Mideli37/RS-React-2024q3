@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button {
+  @apply rounded-md bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 duration-150;
+}
+
+.input {
+  @apply rounded-md px-3.5 py-1.5 text-sm leading-6 text-gray-600 ring-1 ring-teal-600 hover:ring-teal-500 outline-none;
+}

@@ -19,6 +19,7 @@ export class ErrorButton extends Component<unknown, State> {
     }
     return (
       <button
+        className="fixed left-3 bottom-3 button"
         type="button"
         onClick={() => {
           this.setState({ error: true });

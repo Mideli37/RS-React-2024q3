@@ -57,13 +57,15 @@ export class SearchRequestDisplay extends Component<Props, State> {
       );
     }
     return (
-      <ul>
-        {response?.data.map((pokemon) => (
-          <li key={pokemon.id}>
-            <PokemonCard {...pokemon} />
-          </li>
-        ))}
-      </ul>
+      <div>
+        <ul className="flex flex-row flex-wrap gap-4 justify-center p-3 bg-teal-50">
+          {response?.data.map((pokemon) => (
+            <li key={pokemon.id}>
+              <PokemonCard {...pokemon} />
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 }

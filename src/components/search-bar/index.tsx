@@ -22,15 +22,24 @@ export class SearchBar extends Component<Props> {
   public render(): JSX.Element {
     const { defaultSearchValue } = this.props;
     return (
-      <form onSubmit={this.submitHandler}>
+      <form
+        onSubmit={this.submitHandler}
+        className="flex flex-row p-1 justify-center gap-2 items-center border-b-2"
+      >
         <div>
           <input
+            className="input"
             type="search"
             name="search"
             defaultValue={defaultSearchValue}
           />
         </div>
-        <button type="submit">Search</button>
+        <button
+          type="submit"
+          className="button"
+        >
+          Search
+        </button>
       </form>
     );
   }
