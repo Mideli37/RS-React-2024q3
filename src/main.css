@@ -10,7 +10,6 @@
   @apply rounded-md px-3.5 py-1.5 text-sm leading-6 text-gray-600 ring-1 ring-teal-600 hover:ring-teal-500 outline-none;
 }
 
-/* HTML: <div class="loader"></div> */
 .loader {
   height: 60px;
   aspect-ratio: 1;
