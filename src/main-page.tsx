@@ -17,7 +17,7 @@ export class MainPage extends Component<unknown, State> {
   public render(): JSX.Element {
     const { searchValue: value } = this.state;
     return (
-      <div>
+      <div className="min-h-dvh flex flex-col">
         <ErrorButton />
         <SearchBar
           defaultSearchValue={value}
