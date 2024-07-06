@@ -32,6 +32,7 @@ export class SearchBar extends Component<Props> {
             type="search"
             name="search"
             defaultValue={defaultSearchValue}
+            pattern="[\w'\-]*"
           />
         </div>
         <button
