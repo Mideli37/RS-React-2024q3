@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { SearchBar } from './components/search-bar';
 import { SearchRequestDisplay } from './components/search-result-display';
+import { ErrorButton } from './components/error-button';
 
 type State = {
   searchValue: string;
@@ -17,6 +18,7 @@ export class App extends Component<unknown, State> {
     const { searchValue: value } = this.state;
     return (
       <div>
+        <ErrorButton />
         <SearchBar
           defaultSearchValue={value}
           setSearchValue={(data) => {

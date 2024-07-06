@@ -37,7 +37,7 @@ module.exports = {
     '@typescript-eslint/lines-between-class-members': 'warn',
     'import/prefer-default-export': 'off',
     'curly': ['error', 'all'],
-    'no-console': 'warn',
+    'no-console': ['warn', { allow: ['error'] }],
     'no-underscore-dangle': 'off',
     'no-void': 'off',
     'react-compiler/react-compiler': 'error',
