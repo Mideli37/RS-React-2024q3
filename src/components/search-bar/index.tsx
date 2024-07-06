@@ -15,7 +15,7 @@ export class SearchBar extends Component<Props> {
     const searchValue = data.get('search')?.toString();
     const { setSearchValue } = this.props;
     if (searchValue) {
-      setSearchValue(searchValue);
+      setSearchValue(searchValue.trim());
     }
   };
 

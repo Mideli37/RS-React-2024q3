@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { SearchBar } from './components/search-bar';
+import { SearchRequestDisplay } from './components/search-result-display';
 
 type State = {
   searchValue: string;
@@ -11,11 +12,6 @@ export class App extends Component<unknown, State> {
       searchValue: localStorage.getItem('searchValue') ?? '',
     };
   }
-  /*   private async fetchData(): Promise<void> {
-    fetch('https://api.pokemontcg.io/v2/cards?q=!name:charizard')
-      .then((res) => res.json())
-      .then((data) => this.setState(data));
-  } */
 
   public render(): JSX.Element {
     const { searchValue: value } = this.state;
@@ -28,6 +24,7 @@ export class App extends Component<unknown, State> {
             localStorage.setItem('searchValue', data);
           }}
         />
+        <SearchRequestDisplay searchValue={value} />
       </div>
     );
   }

@@ -42,6 +42,7 @@ module.exports = {
     'no-void': 'off',
     'react-compiler/react-compiler': 'error',
     'react/prefer-stateless-function': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
   settings: {
     'import/resolver': { typescript: true },
