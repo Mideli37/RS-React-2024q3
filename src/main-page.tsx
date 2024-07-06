@@ -6,11 +6,14 @@ import { ErrorButton } from './components/error-button';
 type State = {
   searchValue: string;
 };
+
+const lsPrefix = 'pokemonMideli37';
+
 export class MainPage extends Component<unknown, State> {
   constructor(props: unknown) {
     super(props);
     this.state = {
-      searchValue: localStorage.getItem('searchValue') ?? '',
+      searchValue: localStorage.getItem(`${lsPrefix}searchValue`) ?? '',
     };
   }
 
@@ -23,7 +26,7 @@ export class MainPage extends Component<unknown, State> {
           defaultSearchValue={value}
           setSearchValue={(data) => {
             this.setState({ searchValue: data });
-            localStorage.setItem('searchValue', data);
+            localStorage.setItem(`${lsPrefix}searchValue`, data);
           }}
         />
         <SearchRequestDisplay searchValue={value} />
