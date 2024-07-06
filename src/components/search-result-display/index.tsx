@@ -1,10 +1,8 @@
 import { Component } from 'react';
 import { type PokemonResponse, responseSchema } from './request.schema';
 import { PokemonCard } from '../pokemon-card';
+import { buildUrl } from '../../helpers/build-url';
 
-function buildUrl(params: Record<string, string>): string {
-  return `https://api.pokemontcg.io/v2/cards?${new URLSearchParams(params).toString()}`;
-}
 type State = {
   response: PokemonResponse | null;
 };
@@ -12,7 +10,12 @@ type State = {
 type Props = {
   searchValue: string;
 };
+
 export class SearchRequestDisplay extends Component<Props, State> {
+  private page = 1;
+
+  private pageSize = 10;
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -32,8 +35,14 @@ export class SearchRequestDisplay extends Component<Props, State> {
     }
   }
 
-  private async updateState(searchValue: string): Promise<void> {
-    const response = await fetch(buildUrl({ q: `name:${searchValue}`, page: '1', pageSize: '10' }));
+  private async updateState(searchValue?: string): Promise<void> {
+    let params;
+    if (!searchValue) {
+      params = { page: this.page.toString(), pageSize: this.pageSize.toString() };
+    } else {
+      params = { page: this.page.toString(), pageSize: this.pageSize.toString(), q: `name:${searchValue}*` };
+    }
+    const response = await fetch(buildUrl(params));
     const parsedData = responseSchema.cast(await response.json());
     this.setState({ response: parsedData });
   }
