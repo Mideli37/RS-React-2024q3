@@ -6,7 +6,7 @@ import { ErrorButton } from './components/error-button';
 type State = {
   searchValue: string;
 };
-export class App extends Component<unknown, State> {
+export class MainPage extends Component<unknown, State> {
   constructor(props: unknown) {
     super(props);
     this.state = {
