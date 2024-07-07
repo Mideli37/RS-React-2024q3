@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { type PokemonResponse, responseSchema } from './request.schema';
+import { getPokemonInfo } from '../../api';
 import { PokemonCard } from '../pokemon-card';
-import { buildUrl } from '../../helpers/build-url';
+import { type PokemonResponse } from './request.schema';
 
 type State = {
   response: PokemonResponse | null;
@@ -47,8 +47,7 @@ export class SearchRequestDisplay extends Component<Props, State> {
     }
 
     this.setState((state) => ({ ...state, isPending: true }));
-    const response = await fetch(buildUrl(params));
-    const parsedData = responseSchema.cast(await response.json());
+    const parsedData = await getPokemonInfo(params);
     this.setState({ response: parsedData, isPending: false });
   }
 
