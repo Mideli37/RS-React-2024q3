@@ -8,19 +8,23 @@ type Props = {
 export class SearchBar extends Component<Props> {
   private submitHandler = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+
     if (!(e.target instanceof HTMLFormElement)) {
       throw new Error('not html form element');
     }
+
     const data = new FormData(e.target);
-    const searchValue = data.get('search')?.toString();
+    const searchValue = data.get('search')?.toString().trim();
     const { setSearchValue } = this.props;
+
     if (searchValue) {
-      setSearchValue(searchValue.trim());
+      setSearchValue(searchValue);
     }
   };
 
   public render(): JSX.Element {
     const { defaultSearchValue } = this.props;
+
     return (
       <form
         onSubmit={this.submitHandler}

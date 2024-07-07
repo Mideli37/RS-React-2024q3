@@ -32,6 +32,7 @@ export class SearchRequestDisplay extends Component<Props, State> {
 
   public componentDidUpdate(prevProps: Readonly<Props>): void {
     const { searchValue } = this.props;
+
     if (prevProps.searchValue !== searchValue) {
       void this.updateState(searchValue);
     }
@@ -44,6 +45,7 @@ export class SearchRequestDisplay extends Component<Props, State> {
     } else {
       params = { page: this.page.toString(), pageSize: this.pageSize.toString(), q: `name:${searchValue}*` };
     }
+
     this.setState((state) => ({ ...state, isPending: true }));
     const response = await fetch(buildUrl(params));
     const parsedData = responseSchema.cast(await response.json());
@@ -52,6 +54,7 @@ export class SearchRequestDisplay extends Component<Props, State> {
 
   public render(): JSX.Element {
     const { response, isPending } = this.state;
+
     if (isPending) {
       return (
         <div className="grow flex justify-center items-center bg-teal-50">
@@ -59,6 +62,7 @@ export class SearchRequestDisplay extends Component<Props, State> {
         </div>
       );
     }
+
     return (
       <div className="grow flex justify-center items-center bg-teal-50">
         {response?.data.length === 0 ? (

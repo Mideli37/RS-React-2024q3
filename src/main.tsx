@@ -1,8 +1,8 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './app';
-import './main.css';
 import ErrorBoundary from './components/error-boundary';
+import './main.css';
 
 const root = document.getElementById('root');
 
@@ -11,7 +11,7 @@ if (!root) {
 }
 
 ReactDOM.createRoot(root).render(
-  <React.StrictMode>
+  <StrictMode>
     <ErrorBoundary
       fallback={
         <div className="h-dvh flex justify-center items-center">
@@ -21,5 +21,5 @@ ReactDOM.createRoot(root).render(
     >
       <App />
     </ErrorBoundary>
-  </React.StrictMode>
+  </StrictMode>
 );

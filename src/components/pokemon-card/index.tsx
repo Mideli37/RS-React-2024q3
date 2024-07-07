@@ -8,6 +8,7 @@ export class PokemonCard extends Component<Pokemon> {
       flavorText,
       images: { small: image },
     } = this.props;
+
     return (
       <div className="flex flex-col gap-2 p-2 rounded-md  max-w-60 h-full items-center shadow-lg hover:shadow-2xl duration-200 cursor-pointer text-center bg-white">
         <p className="font-bold text-lg text-teal-800">{name}</p>
