@@ -1,34 +1,21 @@
-import { Component } from 'react';
+import { useState, type JSX } from 'react';
 
-type State = {
-  hasError: boolean;
-};
+export function ErrorButton(): JSX.Element {
+  const [hasError, setHasError] = useState(false);
 
-export class ErrorButton extends Component<unknown, State> {
-  constructor(props: unknown) {
-    super(props);
-    this.state = {
-      hasError: false,
-    };
+  if (hasError) {
+    throw new Error('The button throw an error');
   }
 
-  public render(): JSX.Element {
-    const { hasError } = this.state;
-
-    if (hasError) {
-      throw new Error('The button throw an error');
-    }
-
-    return (
-      <button
-        className="fixed left-3 bottom-3 button"
-        type="button"
-        onClick={() => {
-          this.setState({ hasError: true });
-        }}
-      >
-        Error button
-      </button>
-    );
-  }
+  return (
+    <button
+      className="fixed left-3 bottom-3 button"
+      type="button"
+      onClick={() => {
+        setHasError(true);
+      }}
+    >
+      Error button
+    </button>
+  );
 }
