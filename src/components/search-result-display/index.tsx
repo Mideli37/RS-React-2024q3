@@ -1,8 +1,9 @@
-import { useEffect, useState, type JSX } from 'react';
+import { useCallback, useEffect, useState, type JSX } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { getPokemonInfo } from '../../api';
+import { Pagination } from '../pagination';
 import { PokemonCard } from '../pokemon-card';
 import { type PokemonResponse } from './request.schema';
-import { Pagination } from '../pagination';
 
 type Props = {
   searchValue: string;
@@ -13,10 +14,25 @@ type ResponseObj = {
   isPending: boolean;
 };
 
-export function SearchRequestDisplay({ searchValue }: Props): JSX.Element {
-  const [page, setPage] = useState(1);
+function isPositiveNumber(num: unknown): boolean {
+  if (Number.isFinite(Number(num)) && Number(num) > 0) {
+    return true;
+  }
+  return false;
+}
 
-  /* const [pageSize, setPageSize] = useState(10); */
+export function SearchRequestDisplay({ searchValue }: Props): JSX.Element {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageFromSearchParams = searchParams.get('page');
+  const page = isPositiveNumber(pageFromSearchParams) && pageFromSearchParams ? +pageFromSearchParams : 1;
+  const setPage = useCallback(
+    (newPage: number): void => {
+      setSearchParams(
+        (prev) => new URLSearchParams({ ...Object.fromEntries(prev.entries()), page: newPage.toString() })
+      );
+    },
+    [setSearchParams]
+  );
 
   const pageSize = 10;
 
@@ -33,14 +49,14 @@ export function SearchRequestDisplay({ searchValue }: Props): JSX.Element {
 
       setState((prevState) => ({ ...prevState, isPending: true }));
       const parsedData = await getPokemonInfo(params);
-      setState({ response: parsedData, isPending: false });
+      if (parsedData.data.length !== 0) {
+        setState({ response: parsedData, isPending: false });
+      } else {
+        setPage(Math.ceil(parsedData.totalCount / pageSize));
+      }
     }
     void updateState(searchValue);
-  }, [page, pageSize, searchValue]);
-
-  useEffect(() => {
-    setPage(1);
-  }, [searchValue]);
+  }, [page, pageSize, searchValue, setPage]);
 
   const { response, isPending } = state;
 
@@ -60,7 +76,7 @@ export function SearchRequestDisplay({ searchValue }: Props): JSX.Element {
         <>
           <Pagination
             curPage={page}
-            totalCount={response?.totalCount ?? 0}
+            totalCardCount={response?.totalCount ?? 0}
             pageSize={pageSize}
             setPage={setPage}
           />

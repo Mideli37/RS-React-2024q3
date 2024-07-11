@@ -1,14 +1,14 @@
-import type { Dispatch, SetStateAction, JSX } from 'react';
+import type { JSX } from 'react';
 
 type PaginationProps = {
   curPage: number;
-  totalCount: number;
+  totalCardCount: number;
   pageSize: number;
-  setPage: Dispatch<SetStateAction<number>>;
+  setPage: (page: number) => void;
 };
 
-export function Pagination({ curPage, totalCount, pageSize, setPage }: PaginationProps): JSX.Element {
-  const totalPageCount = Math.ceil(totalCount / pageSize);
+export function Pagination({ curPage, totalCardCount, pageSize, setPage }: PaginationProps): JSX.Element {
+  const totalPageCount = Math.ceil(totalCardCount / pageSize);
   let displayedStart = curPage - 1;
   let displayedEnd = curPage + 1;
   const elements = [];
