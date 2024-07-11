@@ -1,6 +1,7 @@
 import type { JSX } from 'react';
-import { MainPage } from './main-page';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
 export function App(): JSX.Element {
-  return <MainPage />;
+  return <RouterProvider router={router} />;
 }
