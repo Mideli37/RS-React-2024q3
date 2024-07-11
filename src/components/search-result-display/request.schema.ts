@@ -13,9 +13,9 @@ export type Pokemon = yup.InferType<typeof pokemonSchema>;
 
 export const responseSchema = yup.object({
   data: yup.array(pokemonSchema).required(),
-  page: yup.string().required(),
-  pageSize: yup.string().required(),
-  totalCount: yup.string().required(),
+  page: yup.number().required(),
+  pageSize: yup.number().required(),
+  totalCount: yup.number().required(),
 });
 
 export type PokemonResponse = yup.InferType<typeof responseSchema>;
