@@ -79,7 +79,10 @@ export function SearchRequestDisplay({ searchValue }: Props): JSX.Element {
           />
           <ul className="flex flex-row flex-wrap max-w-screen-2xl gap-4 justify-center p-3">
             {response?.data.map((pokemon) => (
-              <li key={pokemon.id} className='z-20'>
+              <li
+                key={pokemon.id}
+                className="z-20"
+              >
                 <PokemonCard {...pokemon} />
               </li>
             ))}

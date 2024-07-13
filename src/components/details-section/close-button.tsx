@@ -1,6 +1,6 @@
 import type { JSX } from 'react';
 
-export function CloseButton({onClick}: {onClick: () => void}): JSX.Element {
+export function CloseButton({ onClick }: { onClick: () => void }): JSX.Element {
   return (
     <button
       type="button"

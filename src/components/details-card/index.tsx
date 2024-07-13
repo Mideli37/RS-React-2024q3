@@ -13,7 +13,7 @@ export function DetailsCard(pokemonInfo?: Pokemon): JSX.Element {
 
   const query = searchParams.size === 0 ? '' : `?${searchParams.toString()}`;
   const { name, hp, types, attacks } = pokemonInfo;
-  
+
   return (
     <>
       <NavLink

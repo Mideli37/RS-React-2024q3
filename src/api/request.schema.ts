@@ -7,10 +7,10 @@ const abilitySchema = yup.object({
 });
 
 const attackSchema = yup.object({
-  name:yup.string().required(),
-  damage:yup.string().required(),
-  text:yup.string().required(),
-})
+  name: yup.string().required(),
+  damage: yup.string().required(),
+  text: yup.string().required(),
+});
 
 const pokemonSchema = yup.object({
   id: yup.string().required(),
@@ -22,7 +22,7 @@ const pokemonSchema = yup.object({
   abilities: yup.array(abilitySchema),
   attacks: yup.array(attackSchema),
   hp: yup.string(),
-  types: yup.array(yup.string())
+  types: yup.array(yup.string()),
 });
 
 export type Pokemon = yup.InferType<typeof pokemonSchema>;

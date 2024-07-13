@@ -10,9 +10,9 @@ export function PokemonCard(pokemonInfo: Pokemon): JSX.Element {
     images: { small: image },
   } = pokemonInfo;
 
-  const [searchParams] = useSearchParams()
-  const query = searchParams.size === 0 ? '' : `?${searchParams.toString()}`
-  
+  const [searchParams] = useSearchParams();
+  const query = searchParams.size === 0 ? '' : `?${searchParams.toString()}`;
+
   return (
     <NavLink
       to={`details/${id}${query}`}

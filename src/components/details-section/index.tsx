@@ -27,5 +27,3 @@ export function DetailsSection(): JSX.Element {
     </div>
   );
 }
-
-

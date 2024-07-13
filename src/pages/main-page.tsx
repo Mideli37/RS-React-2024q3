@@ -9,7 +9,7 @@ const lsPrefix = 'pokemonMideli37';
 export function MainPage(): JSX.Element {
   const [searchValue, setSearchValue] = useState(localStorage.getItem(`${lsPrefix}searchValue`) ?? '');
   const [, setSearchParams] = useSearchParams();
-  
+
   return (
     <div className="min-h-dvh flex flex-row justify-center">
       <ErrorButton />
@@ -24,7 +24,7 @@ export function MainPage(): JSX.Element {
         />
         <SearchRequestDisplay searchValue={searchValue} />
       </div>
-      <Outlet/>
+      <Outlet />
     </div>
   );
 }
