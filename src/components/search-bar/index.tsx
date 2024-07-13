@@ -26,7 +26,7 @@ export function SearchBar(props: Props): JSX.Element {
   return (
     <form
       onSubmit={submitHandler}
-      className="flex flex-row p-1 justify-center gap-2 items-center border-b-2"
+      className="flex flex-row p-1 justify-center gap-2 items-center border-b-2 z-20"
     >
       <div>
         <input

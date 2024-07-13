@@ -74,7 +74,7 @@ export function Pagination({ curPage, totalCardCount, pageSize, setPage }: Pagin
   }
 
   return (
-    <ul className="flex flex-row">
+    <ul className="flex flex-row z-20">
       <li className="pagination-li">
         <button
           className="pagination-btn"
