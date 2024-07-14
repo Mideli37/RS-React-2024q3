@@ -1,15 +1,15 @@
 import * as yup from 'yup';
 
 const abilitySchema = yup.object({
-  name: yup.string().required(),
-  text: yup.string().required(),
-  type: yup.string().required(),
+  name: yup.string(),
+  text: yup.string(),
+  type: yup.string(),
 });
 
 const attackSchema = yup.object({
-  name: yup.string().required(),
-  damage: yup.string().required(),
-  text: yup.string().required(),
+  name: yup.string(),
+  damage: yup.string(),
+  text: yup.string(),
 });
 
 const pokemonSchema = yup.object({

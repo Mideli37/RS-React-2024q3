@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState, type JSX } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getPokemonInfo } from '../../api/api';
-import { Pagination } from '../pagination';
-import { PokemonCard } from '../pokemon-card';
 import { type PokemonResponse } from '../../api/request.schema';
 import { Loader } from '../loader';
+import { Pagination } from '../pagination';
+import { CardList } from './card-list';
 
 type Props = {
   searchValue: string;
@@ -37,7 +37,7 @@ export function SearchRequestDisplay({ searchValue }: Props): JSX.Element {
 
   const pageSize = 10;
 
-  const [state, setState] = useState<ResponseObj>({ response: null, isPending: false });
+  const [queryResponse, setQueryResponse] = useState<ResponseObj>({ response: null, isPending: false });
 
   useEffect(() => {
     async function updateState(searchTerm?: string): Promise<void> {
@@ -48,18 +48,14 @@ export function SearchRequestDisplay({ searchValue }: Props): JSX.Element {
         params = { page: page.toString(), pageSize: pageSize.toString(), q: `name:${searchTerm}*` };
       }
 
-      setState((prevState) => ({ ...prevState, isPending: true }));
+      setQueryResponse((prevState) => ({ ...prevState, isPending: true }));
       const parsedData = await getPokemonInfo(params);
-      if (parsedData.data.length !== 0) {
-        setState({ response: parsedData, isPending: false });
-      } else {
-        setPage(Math.ceil(parsedData.totalCount / pageSize));
-      }
+      setQueryResponse({ response: parsedData, isPending: false });
     }
     void updateState(searchValue);
   }, [page, pageSize, searchValue, setPage]);
 
-  const { response, isPending } = state;
+  const { response, isPending } = queryResponse;
 
   if (isPending) {
     return <Loader />;
@@ -67,26 +63,17 @@ export function SearchRequestDisplay({ searchValue }: Props): JSX.Element {
 
   return (
     <div className="grow flex flex-col justify-center items-center bg-teal-50">
-      {response?.data.length === 0 ? (
-        <p>No cards were found</p>
-      ) : (
+      {response && (
         <>
-          <Pagination
-            curPage={page}
-            totalCardCount={response?.totalCount ?? 0}
-            pageSize={pageSize}
-            setPage={setPage}
-          />
-          <ul className="flex flex-row flex-wrap max-w-screen-2xl gap-4 justify-center p-3">
-            {response?.data.map((pokemon) => (
-              <li
-                key={pokemon.id}
-                className="z-20"
-              >
-                <PokemonCard {...pokemon} />
-              </li>
-            ))}
-          </ul>
+          {response.data.length !== 0 && (
+            <Pagination
+              curPage={page}
+              totalCardCount={response.totalCount}
+              pageSize={pageSize}
+              setPage={setPage}
+            />
+          )}
+          <CardList data={response.data} />
         </>
       )}
     </div>

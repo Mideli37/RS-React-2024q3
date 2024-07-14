@@ -20,7 +20,10 @@ export function DetailsCard(pokemonInfo?: Pokemon): JSX.Element {
         to={`/${query}`}
         className="absolute inset-0 z-10 cursor-default"
       />
-      <div className="h-dvh relative flex w-full p-10 flex-col z-20">
+      <div
+        data-testid="details-card"
+        className="h-dvh relative flex w-full p-10 flex-col z-20"
+      >
         <CloseButton
           onClick={() => {
             navigate(`/${query}`);
@@ -45,8 +48,8 @@ export function DetailsCard(pokemonInfo?: Pokemon): JSX.Element {
               {attacks.map((attack) => (
                 <li key={attack.name}>
                   <p>{attack.name}</p>
-                  <p>{`Damage: ${attack.damage}`}</p>
-                  <p>{`Description: ${attack.text}`}</p>
+                  {attack.damage ? <p>{`Damage: ${attack.damage}`}</p> : 'No damage specified'}
+                  {attack.text ? <p>{`Description: ${attack.text}`}</p> : 'No description provided'}
                 </li>
               ))}
             </ul>
