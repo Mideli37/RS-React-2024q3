@@ -1,9 +1,7 @@
-import { Component } from 'react';
 import type { JSX } from 'react';
-import { MainPage } from './main-page';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
-export class App extends Component {
-  public render(): JSX.Element {
-    return <MainPage />;
-  }
+export function App(): JSX.Element {
+  return <RouterProvider router={router} />;
 }

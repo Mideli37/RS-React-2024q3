@@ -1,81 +1,81 @@
-import { Component } from 'react';
-import { getPokemonInfo } from '../../api';
-import { PokemonCard } from '../pokemon-card';
-import { type PokemonResponse } from './request.schema';
-
-type State = {
-  response: PokemonResponse | null;
-  isPending: boolean;
-};
+import { useCallback, useEffect, useState, type JSX } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { getPokemonInfo } from '../../api/api';
+import { type PokemonResponse } from '../../api/request.schema';
+import { Loader } from '../loader';
+import { Pagination } from '../pagination';
+import { CardList } from './card-list';
 
 type Props = {
   searchValue: string;
 };
 
-export class SearchRequestDisplay extends Component<Props, State> {
-  private page = 1;
+type ResponseObj = {
+  response: PokemonResponse | null;
+  isPending: boolean;
+};
 
-  private pageSize = 10;
-
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      response: null,
-      isPending: false,
-    };
+function isPositiveNumber(num: unknown): boolean {
+  if (Number.isFinite(Number(num)) && Number(num) > 0) {
+    return true;
   }
+  return false;
+}
 
-  public componentDidMount(): void {
-    const { searchValue } = this.props;
-    void this.updateState(searchValue);
-  }
-
-  public componentDidUpdate(prevProps: Readonly<Props>): void {
-    const { searchValue } = this.props;
-
-    if (prevProps.searchValue !== searchValue) {
-      void this.updateState(searchValue);
-    }
-  }
-
-  private async updateState(searchValue?: string): Promise<void> {
-    let params;
-    if (!searchValue) {
-      params = { page: this.page.toString(), pageSize: this.pageSize.toString() };
-    } else {
-      params = { page: this.page.toString(), pageSize: this.pageSize.toString(), q: `name:${searchValue}*` };
-    }
-
-    this.setState((state) => ({ ...state, isPending: true }));
-    const parsedData = await getPokemonInfo(params);
-    this.setState({ response: parsedData, isPending: false });
-  }
-
-  public render(): JSX.Element {
-    const { response, isPending } = this.state;
-
-    if (isPending) {
-      return (
-        <div className="grow flex justify-center items-center bg-teal-50">
-          <div className="loader" />
-        </div>
+export function SearchRequestDisplay({ searchValue }: Props): JSX.Element {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageFromSearchParams = searchParams.get('page');
+  const page = isPositiveNumber(pageFromSearchParams) && pageFromSearchParams ? +pageFromSearchParams : 1;
+  const setPage = useCallback(
+    (newPage: number): void => {
+      setSearchParams(
+        (prev) => new URLSearchParams({ ...Object.fromEntries(prev.entries()), page: newPage.toString() })
       );
-    }
+    },
+    [setSearchParams]
+  );
 
-    return (
-      <div className="grow flex justify-center items-center bg-teal-50">
-        {response?.data.length === 0 ? (
-          <p>No cards were found</p>
-        ) : (
-          <ul className="flex flex-row flex-wrap max-w-screen-2xl gap-4 justify-center p-3">
-            {response?.data.map((pokemon) => (
-              <li key={pokemon.id}>
-                <PokemonCard {...pokemon} />
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    );
+  const pageSize = 10;
+
+  const [queryResponse, setQueryResponse] = useState<ResponseObj>({ response: null, isPending: false });
+
+  useEffect(() => {
+    async function updateState(searchTerm?: string): Promise<void> {
+      let params;
+      if (!searchTerm) {
+        params = { page: page.toString(), pageSize: pageSize.toString() };
+      } else {
+        params = { page: page.toString(), pageSize: pageSize.toString(), q: `name:${searchTerm}*` };
+      }
+
+      setQueryResponse((prevState) => ({ ...prevState, isPending: true }));
+      const parsedData = await getPokemonInfo(params);
+      setQueryResponse({ response: parsedData, isPending: false });
+    }
+    void updateState(searchValue);
+  }, [page, pageSize, searchValue, setPage]);
+
+  const { response, isPending } = queryResponse;
+
+  if (isPending) {
+    return <Loader />;
   }
+
+  return (
+    <div className="grow flex flex-col justify-center items-center bg-teal-50">
+      {response && (
+        <>
+          {response.data.length !== 0 && (
+            <Pagination
+              curPage={page}
+              totalCardCount={response.totalCount}
+              pageSize={pageSize}
+              setPage={setPage}
+            />
+          )}
+          <CardList data={response.data} />
+        </>
+      )}
+    </div>
+  );
 }

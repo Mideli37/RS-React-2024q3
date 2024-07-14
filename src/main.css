@@ -56,3 +56,58 @@
     transform: rotate(-0.2deg);
   }
 }
+
+/* pagination */
+
+:root {
+  --primary: #23adad;
+  --greyLight: #23adade1;
+  --greyLight-2: #cbe0dd;
+  --greyDark: #2d4848;
+}
+
+.pagination-li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.pagination-dots {
+  width: 2rem;
+  height: 2rem;
+  color: var(--greyLight);
+}
+
+.pagination-numbers {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.4rem;
+
+  &:hover {
+    color: var(--primary);
+  }
+
+  &.active {
+    color: #ffffff;
+    background: var(--primary);
+    font-weight: 600;
+    border: 1px solid var(--primary);
+  }
+}
+
+.pagination-btn {
+  color: var(--greyLight);
+  cursor: pointer;
+
+  &.active {
+    color: var(--greyDark);
+    pointer-events: initial;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}

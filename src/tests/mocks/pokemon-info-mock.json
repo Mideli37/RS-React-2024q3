@@ -1,0 +1,487 @@
+{
+  "data": [
+    {
+      "id": "swsh12pt5-107",
+      "name": "Ditto",
+      "supertype": "Pokémon",
+      "subtypes": ["Basic"],
+      "hp": "70",
+      "types": ["Colorless"],
+      "abilities": [
+        {
+          "name": "Sudden Transformation",
+          "text": "This Pokémon can use the attacks of any Basic Pokémon in your discard pile, except for Pokémon with a Rule Box (Pokémon V, Pokémon-GX, etc. have Rule Boxes). (You still need the necessary Energy to use each attack.)",
+          "type": "Ability"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": ["Colorless"],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "swsh12pt5",
+        "name": "Crown Zenith",
+        "series": "Sword & Shield",
+        "printedTotal": 159,
+        "total": 160,
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "CRZ",
+        "releaseDate": "2023/01/20",
+        "updatedAt": "2023/01/19 15:45:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/swsh12pt5/symbol.png",
+          "logo": "https://images.pokemontcg.io/swsh12pt5/logo.png"
+        }
+      },
+      "number": "107",
+      "artist": "KIYOTAKA OSHIYAMA",
+      "rarity": "Rare Holo",
+      "flavorText": "It can reconstitute its entire cellular structure to change into what it sees, but it returns to normal when it relaxes.",
+      "nationalPokedexNumbers": [132],
+      "legalities": {
+        "unlimited": "Legal",
+        "standard": "Legal",
+        "expanded": "Legal"
+      },
+      "regulationMark": "F",
+      "images": {
+        "small": "https://images.pokemontcg.io/swsh12pt5/107.png",
+        "large": "https://images.pokemontcg.io/swsh12pt5/107_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5-107",
+        "updatedAt": "2024/07/14",
+        "prices": {
+          "reverseHolofoil": {
+            "low": 0.15,
+            "mid": 0.6,
+            "high": 9.99,
+            "market": 0.55,
+            "directLow": null
+          },
+          "holofoil": {
+            "low": 0.1,
+            "mid": 0.43,
+            "high": 9.95,
+            "market": 0.35,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/swsh12pt5-107",
+        "updatedAt": "2024/07/14",
+        "prices": {
+          "averageSellPrice": 0.51,
+          "lowPrice": 0.07,
+          "trendPrice": 0.53,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.89,
+          "reverseHoloLow": 0.07,
+          "reverseHoloTrend": 0.59,
+          "lowPriceExPlus": 0.07,
+          "avg1": 0.86,
+          "avg7": 0.51,
+          "avg30": 0.5,
+          "reverseHoloAvg1": 1.16,
+          "reverseHoloAvg7": 0.56,
+          "reverseHoloAvg30": 0.82
+        }
+      }
+    },
+    {
+      "id": "swsh12pt5-126",
+      "name": "Digging Duo",
+      "supertype": "Trainer",
+      "subtypes": ["Supporter"],
+      "rules": [
+        "Flip a coin. If heads, look at the bottom 8 cards of your deck and put 1 of them into your hand. If tails, look at the bottom 3 cards of your deck and put 1 of them into your hand. Shuffle the other cards back into your deck.",
+        "You may play only 1 Supporter card during your turn."
+      ],
+      "set": {
+        "id": "swsh12pt5",
+        "name": "Crown Zenith",
+        "series": "Sword & Shield",
+        "printedTotal": 159,
+        "total": 160,
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "CRZ",
+        "releaseDate": "2023/01/20",
+        "updatedAt": "2023/01/19 15:45:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/swsh12pt5/symbol.png",
+          "logo": "https://images.pokemontcg.io/swsh12pt5/logo.png"
+        }
+      },
+      "number": "126",
+      "artist": "Yuu Nishida",
+      "rarity": "Uncommon",
+      "legalities": {
+        "unlimited": "Legal",
+        "standard": "Legal",
+        "expanded": "Legal"
+      },
+      "regulationMark": "F",
+      "images": {
+        "small": "https://images.pokemontcg.io/swsh12pt5/126.png",
+        "large": "https://images.pokemontcg.io/swsh12pt5/126_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5-126",
+        "updatedAt": "2024/07/14",
+        "prices": {
+          "normal": {
+            "low": 0.01,
+            "mid": 0.06,
+            "high": 1.0,
+            "market": 0.03,
+            "directLow": 0.01
+          },
+          "reverseHolofoil": {
+            "low": 0.04,
+            "mid": 0.2,
+            "high": 5.0,
+            "market": 0.17,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/swsh12pt5-126",
+        "updatedAt": "2024/07/14",
+        "prices": {
+          "averageSellPrice": 0.03,
+          "lowPrice": 0.01,
+          "trendPrice": 0.07,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.22,
+          "reverseHoloLow": 0.03,
+          "reverseHoloTrend": 0.27,
+          "lowPriceExPlus": 0.01,
+          "avg1": 0.13,
+          "avg7": 0.04,
+          "avg30": 0.03,
+          "reverseHoloAvg1": 0.25,
+          "reverseHoloAvg7": 0.28,
+          "reverseHoloAvg30": 0.22
+        }
+      }
+    },
+    {
+      "id": "swsh12pt5gg-GG13",
+      "name": "Diancie",
+      "supertype": "Pokémon",
+      "subtypes": ["Basic"],
+      "hp": "90",
+      "types": ["Psychic"],
+      "abilities": [
+        {
+          "name": "Princess's Curtain",
+          "text": "As long as this Pokémon is in the Active Spot, whenever your opponent plays a Supporter card from their hand, prevent all effects of that card done to your Benched Basic Pokémon.",
+          "type": "Ability"
+        }
+      ],
+      "attacks": [
+        {
+          "name": "Spike Draw",
+          "cost": ["Colorless"],
+          "convertedEnergyCost": 1,
+          "damage": "20",
+          "text": "Draw 2 cards."
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Metal",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": ["Colorless"],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "swsh12pt5gg",
+        "name": "Crown Zenith Galarian Gallery",
+        "series": "Sword & Shield",
+        "printedTotal": 70,
+        "total": 70,
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "CRZ",
+        "releaseDate": "2023/01/20",
+        "updatedAt": "2023/01/19 15:45:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/swsh12pt5gg/symbol.png",
+          "logo": "https://images.pokemontcg.io/swsh12pt5gg/logo.png"
+        }
+      },
+      "number": "GG13",
+      "artist": "Haruko Ichikawa",
+      "rarity": "Trainer Gallery Rare Holo",
+      "flavorText": "It can instantly create many diamonds by compressing the carbon in the air between its hands.",
+      "nationalPokedexNumbers": [719],
+      "legalities": {
+        "unlimited": "Legal",
+        "standard": "Legal",
+        "expanded": "Legal"
+      },
+      "regulationMark": "F",
+      "images": {
+        "small": "https://images.pokemontcg.io/swsh12pt5gg/GG13.png",
+        "large": "https://images.pokemontcg.io/swsh12pt5gg/GG13_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG13",
+        "updatedAt": "2024/07/14",
+        "prices": {
+          "holofoil": {
+            "low": 0.44,
+            "mid": 1.0,
+            "high": 5.95,
+            "market": 0.91,
+            "directLow": 0.94
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/swsh12pt5gg-GG13",
+        "updatedAt": "2024/07/14",
+        "prices": {
+          "averageSellPrice": 1.21,
+          "lowPrice": 0.5,
+          "trendPrice": 1.06,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.0,
+          "lowPriceExPlus": 0.55,
+          "avg1": 1.05,
+          "avg7": 1.2,
+          "avg30": 1.23,
+          "reverseHoloAvg1": 0.0,
+          "reverseHoloAvg7": 0.0,
+          "reverseHoloAvg30": 0.0
+        }
+      }
+    },
+    {
+      "id": "swsh12pt5gg-GG22",
+      "name": "Ditto",
+      "supertype": "Pokémon",
+      "subtypes": ["Basic"],
+      "hp": "70",
+      "types": ["Colorless"],
+      "abilities": [
+        {
+          "name": "Sudden Transformation",
+          "text": "This Pokémon can use the attacks of any Basic Pokémon in your discard pile, except for Pokémon with a Rule Box (Pokémon V, Pokémon-GX, etc. have Rule Boxes). (You still need the necessary Energy to use each attack.)",
+          "type": "Ability"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fighting",
+          "value": "×2"
+        }
+      ],
+      "retreatCost": ["Colorless"],
+      "convertedRetreatCost": 1,
+      "set": {
+        "id": "swsh12pt5gg",
+        "name": "Crown Zenith Galarian Gallery",
+        "series": "Sword & Shield",
+        "printedTotal": 70,
+        "total": 70,
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "CRZ",
+        "releaseDate": "2023/01/20",
+        "updatedAt": "2023/01/19 15:45:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/swsh12pt5gg/symbol.png",
+          "logo": "https://images.pokemontcg.io/swsh12pt5gg/logo.png"
+        }
+      },
+      "number": "GG22",
+      "artist": "Miki Tanaka",
+      "rarity": "Trainer Gallery Rare Holo",
+      "flavorText": "It can reconstitute its entire cellular structure to change into what it sees, but it returns to normal when it relaxes.",
+      "nationalPokedexNumbers": [132],
+      "legalities": {
+        "unlimited": "Legal",
+        "standard": "Legal",
+        "expanded": "Legal"
+      },
+      "regulationMark": "F",
+      "images": {
+        "small": "https://images.pokemontcg.io/swsh12pt5gg/GG22.png",
+        "large": "https://images.pokemontcg.io/swsh12pt5gg/GG22_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG22",
+        "updatedAt": "2024/07/14",
+        "prices": {
+          "holofoil": {
+            "low": 0.79,
+            "mid": 1.46,
+            "high": 10.0,
+            "market": 1.27,
+            "directLow": null
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/swsh12pt5gg-GG22",
+        "updatedAt": "2024/07/14",
+        "prices": {
+          "averageSellPrice": 1.37,
+          "lowPrice": 0.5,
+          "trendPrice": 1.37,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.0,
+          "lowPriceExPlus": 0.8,
+          "avg1": 1.66,
+          "avg7": 1.45,
+          "avg30": 1.39,
+          "reverseHoloAvg1": 0.0,
+          "reverseHoloAvg7": 0.0,
+          "reverseHoloAvg30": 0.0
+        }
+      }
+    },
+    {
+      "id": "swsh12pt5gg-GG68",
+      "name": "Origin Forme Dialga VSTAR",
+      "supertype": "Pokémon",
+      "subtypes": ["VSTAR"],
+      "hp": "280",
+      "types": ["Metal"],
+      "evolvesFrom": "Origin Forme Dialga V",
+      "rules": ["VSTAR rule: When your Pokémon VSTAR is Knocked Out, your opponent takes 2 Prize cards."],
+      "attacks": [
+        {
+          "name": "Metal Blast",
+          "cost": ["Colorless"],
+          "convertedEnergyCost": 1,
+          "damage": "40+",
+          "text": "This attack does 40 more damage for each Metal Energy attached to this Pokémon."
+        },
+        {
+          "name": "Star Chronos",
+          "cost": ["Metal", "Metal", "Metal", "Metal", "Colorless"],
+          "convertedEnergyCost": 5,
+          "damage": "220",
+          "text": "Take another turn after this one. (Skip Pokémon Checkup.) (You can't use more than 1 VSTAR Power in a game.)"
+        }
+      ],
+      "weaknesses": [
+        {
+          "type": "Fire",
+          "value": "×2"
+        }
+      ],
+      "resistances": [
+        {
+          "type": "Grass",
+          "value": "-30"
+        }
+      ],
+      "retreatCost": ["Colorless", "Colorless", "Colorless"],
+      "convertedRetreatCost": 3,
+      "set": {
+        "id": "swsh12pt5gg",
+        "name": "Crown Zenith Galarian Gallery",
+        "series": "Sword & Shield",
+        "printedTotal": 70,
+        "total": 70,
+        "legalities": {
+          "unlimited": "Legal",
+          "standard": "Legal",
+          "expanded": "Legal"
+        },
+        "ptcgoCode": "CRZ",
+        "releaseDate": "2023/01/20",
+        "updatedAt": "2023/01/19 15:45:00",
+        "images": {
+          "symbol": "https://images.pokemontcg.io/swsh12pt5gg/symbol.png",
+          "logo": "https://images.pokemontcg.io/swsh12pt5gg/logo.png"
+        }
+      },
+      "number": "GG68",
+      "artist": "AKIRA EGAWA",
+      "rarity": "Rare Secret",
+      "nationalPokedexNumbers": [483],
+      "legalities": {
+        "unlimited": "Legal",
+        "standard": "Legal",
+        "expanded": "Legal"
+      },
+      "regulationMark": "F",
+      "images": {
+        "small": "https://images.pokemontcg.io/swsh12pt5gg/GG68.png",
+        "large": "https://images.pokemontcg.io/swsh12pt5gg/GG68_hires.png"
+      },
+      "tcgplayer": {
+        "url": "https://prices.pokemontcg.io/tcgplayer/swsh12pt5gg-GG68",
+        "updatedAt": "2024/07/14",
+        "prices": {
+          "holofoil": {
+            "low": 47.51,
+            "mid": 52.0,
+            "high": 140.71,
+            "market": 51.1,
+            "directLow": 55.44
+          }
+        }
+      },
+      "cardmarket": {
+        "url": "https://prices.pokemontcg.io/cardmarket/swsh12pt5gg-GG68",
+        "updatedAt": "2024/07/14",
+        "prices": {
+          "averageSellPrice": 54.54,
+          "lowPrice": 37.99,
+          "trendPrice": 55.77,
+          "germanProLow": 0.0,
+          "suggestedPrice": 0.0,
+          "reverseHoloSell": 0.0,
+          "reverseHoloLow": 0.0,
+          "reverseHoloTrend": 0.0,
+          "lowPriceExPlus": 37.99,
+          "avg1": 54.25,
+          "avg7": 50.49,
+          "avg30": 54.55,
+          "reverseHoloAvg1": 0.0,
+          "reverseHoloAvg7": 0.0,
+          "reverseHoloAvg30": 0.0
+        }
+      }
+    }
+  ],
+  "page": 1,
+  "pageSize": 5,
+  "count": 5,
+  "totalCount": 143
+}

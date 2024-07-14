@@ -12,7 +12,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'prettier',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', '*.config*'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', '*.config*', 'coverage'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -47,6 +47,14 @@ module.exports = {
   settings: {
     'import/resolver': { typescript: true },
   },
+  overrides: [
+    {
+      files: ['./src/tests/**/*.ts'],
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+  ],
   noInlineConfig: true,
   reportUnusedDisableDirectives: true,
 };
