@@ -12,4 +12,5 @@ afterAll(() => {
 
 afterEach(() => {
   cleanup();
+  server.resetHandlers()
 });
