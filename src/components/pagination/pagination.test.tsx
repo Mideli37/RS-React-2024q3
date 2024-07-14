@@ -20,19 +20,19 @@ function getRouter(
 }
 
 describe('Pagination component', () => {
-  it('component renders with first page without errors ', () => {
+  it('component renders with first page without errors', () => {
     expect(() => {
       const router = getRouter({ curPage: 1, pageSize: 10, totalCardCount: 100 });
       render(<RouterProvider router={router} />);
     }).not.toThrow();
   });
-  it('component renders with third page without errors ', () => {
+  it('component renders with third page without errors', () => {
     expect(() => {
       const router = getRouter({ curPage: 3, pageSize: 10, totalCardCount: 100 });
       render(<RouterProvider router={router} />);
     }).not.toThrow();
   });
-  it('component renders with seventh page without errors ', () => {
+  it('component renders with seventh page without errors', () => {
     expect(() => {
       const router = getRouter({ curPage: 7, pageSize: 10, totalCardCount: 100 });
       render(<RouterProvider router={router} />);
