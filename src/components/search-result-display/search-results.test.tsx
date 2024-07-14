@@ -3,6 +3,8 @@ import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 import pokemonResponseMock from '../../tests/mocks/pokemon-info-mock.json';
 import { CardList } from './card-list';
 
+import { SearchRequestDisplay } from '.';
+
 describe('Card List component', () => {
   it('The component renders the specified number of cards', () => {
     const expectedCount = pokemonResponseMock.count;
@@ -17,6 +19,7 @@ describe('Card List component', () => {
     const count = cardList.childElementCount;
     expect(count).toBe(expectedCount);
   });
+
   it('An appropriate message is displayed if no cards are present', () => {
     const expectedMessage = /No cards were found/i;
     const router = createMemoryRouter([
@@ -28,5 +31,31 @@ describe('Card List component', () => {
     render(<RouterProvider router={router} />);
     const paragraph = screen.getByRole('paragraph');
     expect(paragraph).toHaveTextContent(expectedMessage);
+  });
+
+  it('component renders without errors', () => {
+    expect(() => {
+      const router = createMemoryRouter([
+        {
+          element: <CardList data={pokemonResponseMock.data} />,
+          path: '/',
+        },
+      ]);
+      render(<RouterProvider router={router} />);
+    }).not.toThrow();
+  });
+});
+
+describe('Search request display component', () => {
+  it('component renders without errors', () => {
+    expect(() => {
+      const router = createMemoryRouter([
+        {
+          element: <SearchRequestDisplay searchValue="" />,
+          path: '/',
+        },
+      ]);
+      render(<RouterProvider router={router} />);
+    }).not.toThrow();
   });
 });
